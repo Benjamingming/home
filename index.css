@@ -1,0 +1,43 @@
+.profile {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  .name {
+    text-align: center;
+    font-size:large;
+  }
+
+  .sns-icon {
+    width: 30px;
+    filter: brightness(0) saturate(100%) invert(76%) sepia(58%) saturate(413%)
+      hue-rotate(167deg) brightness(96%) contrast(91%);
+    margin-left: 30px;
+  }
+}
+
+table {
+  .number {
+    width: 1.06496%;
+    height: 22px;
+    text-align: center;
+  }
+
+  .deck_name {
+    width: 21.0862%;
+    height: 22px;
+  }
+
+  .deck_code {
+    width: 10.1971%;
+    height: 22px;
+    text-align: center;
+  }
+
+  .to_ocgdb {
+    width: 17.6517%;
+    height: 22px;
+    text-align: center;
+  }
+}
