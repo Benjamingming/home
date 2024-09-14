@@ -39,5 +39,10 @@ table {
     width: 17.6517%;
     height: 22px;
     text-align: center;
+
+    .deck-icon {
+      width: 50px;
+    }
   }
+
 }
