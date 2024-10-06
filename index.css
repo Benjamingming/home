@@ -25,10 +25,19 @@ table {
     width: 30%;
   }
 
+  .deck_name_title {
+    text-align: center;
+  }
+
   .deck_description {
     width: 40%;
     padding-top: 15px;
     padding-bottom: 15px;
+  }
+
+  .deck_description_title {
+    text-align: center;
+    padding: 0%;
   }
 
   .deck_code {
