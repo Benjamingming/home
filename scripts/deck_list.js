@@ -27,7 +27,6 @@ window.onload = function () {
     const dataArray = [];
     const dataString = raw_data.split('\n').filter(Boolean);
 
-    console.log(dataString);
     for (const data of dataString) {
       dataArray.push(data.split(','));
     }
