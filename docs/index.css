@@ -1,0 +1,19 @@
+.MainPicture{
+  display: flex;
+  justify-content: center;
+}
+
+.pageLinks{
+  display: flex;
+  justify-content: center;
+
+  margin-top: 50px;
+
+  .pageLink{
+    margin-left: 10px;
+    margin-right: 10px;
+
+    font-size:x-large;
+  }
+
+}
