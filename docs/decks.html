@@ -3,31 +3,25 @@
 
 <head>
   <title>遊戯王 デッキ一覧</title>
+  <link href="./util.css" rel="stylesheet" />
   <link href="./decks.css" rel="stylesheet" />
 </head>
 <script src="./scripts/deck_list.js"></script>
 
 <body>
-  <h1 style="text-align: center; background-color: black;">
+  <h1 class="header">
     <span style="color: hsl(0, 0%, 97%); ">遊戯王 評価2以下構築レギュレーション デッキ一覧</span>
   </h1>
   <div class="profile">
     <span class="name">作 : Benjamingming</span>
-    <span style="margin-left: 30px">
-      <a href="https://x.com/benjaming_ming" target="_blank" rel="noopener">
-        <img class="sns-icon" src="./img/xlogo.svg" title="@benjaming_ming" />
-      </a>
-    </span>
-    <span style="margin-left: 10px">
-      <a href="https://misskey.io/@benjamingming" target="_blank" rel="noopener">
-        <img class="sns-icon" src="./img/IScBR6KO.svg" title="@benjamingming" />
-      </a>
-    </span>
   </div>
 
   <div style="display: flex; justify-content: center; flex-wrap: wrap;">
     <table style="border-collapse: collapse; width: 800px; border-style: solid" border="1" id="deck_list">
     </table>
+  </div>
+  <div class="backLink">
+    <a href="./index.html">トップページへ戻る</a>
   </div>
 </body>
 

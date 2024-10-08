@@ -1,0 +1,10 @@
+.header {
+    text-align: center;
+    background-color: black;
+}
+
+.backLink {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}

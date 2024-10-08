@@ -1,19 +1,37 @@
-.MainPicture{
+.mainPicture {
   display: flex;
   justify-content: center;
 }
 
-.pageLinks{
+.sns {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
+}
 
+.sns-icon {
+  width: 30px;
+  filter: brightness(0) saturate(100%) invert(0%) sepia(6%) saturate(7477%) hue-rotate(246deg) brightness(91%) contrast(97%);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
   margin-top: 50px;
+}
 
-  .pageLink{
-    margin-left: 10px;
-    margin-right: 10px;
+.pageLinks {
+  border: 5px double darkslategray;
+  text-align: center;
+  margin: 5px;
+  width: 250px;
+  height: 150px;
+}
 
-    font-size:x-large;
-  }
-
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  font-size: x-large;
 }

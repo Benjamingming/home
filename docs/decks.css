@@ -8,11 +8,6 @@
       text-align: center;
       font-size:large;
     }
-  
-    .sns-icon {
-      width: 30px;
-      filter: brightness(0) saturate(100%) invert(0%) sepia(6%) saturate(7477%) hue-rotate(246deg) brightness(91%) contrast(97%);
-    }
   }
   
   table {
