@@ -12,7 +12,7 @@ tagline:          ''
 description:      '遊戯王/ゲーム実況者の追っかけ/エトセトラ。'
 domain:           benjamingming.github.io
 url:              https://benjamingming.github.io
-#baseurl:          /
+baseurl:          /home
 
 author:
   name:           'Benjamingming'
