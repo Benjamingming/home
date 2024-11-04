@@ -1,0 +1,18 @@
+.title-message {
+    text-align: center;
+    font-family:
+}
+
+.container {
+    .title {
+        max-width: max-content;
+    }
+}
+
+.pacifico-regular {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: italic;
+    font-size: xx-large;
+  }
+  

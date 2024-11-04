@@ -1,0 +1,32 @@
+# Dependencies
+markdown:         Kramdown
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+#relative_permalinks: true
+
+# Setup
+title:            Benjamingming's HomePage
+tagline:          ''
+description:      '遊戯王/ゲーム実況者の追っかけ/エトセトラ。'
+url:              https://benjamingming.github.io/home/
+baseurl:          /
+
+author:
+  name:           'Benjamingming'
+  url:            https://x.com/benjaming_ming
+
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+twitter:
+  repo:           https://x.com/benjaming_ming
+
+misskey-io:
+  repo:           https://misskey.io/@benjamingming
+
+# Gems
+gems: [jekyll-paginate]
