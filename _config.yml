@@ -10,7 +10,7 @@ permalink:        pretty
 title:            Benjamingming's HomePage
 tagline:          ''
 description:      '遊戯王/ゲーム実況者の追っかけ/エトセトラ。'
-url:              https://benjamingming.github.io/home/
+url:              https://benjamingming.github.io/
 baseurl:          /
 
 author:
@@ -20,7 +20,7 @@ author:
 paginate:         5
 
 # Custom vars
-version:          2.1.0
+version:          1.0.0
 
 twitter:
   repo:           https://x.com/benjaming_ming
