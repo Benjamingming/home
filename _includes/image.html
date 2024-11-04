@@ -1,0 +1,2 @@
+{% assign media = site.baseurl | append: "assets/img/" |  replace: ".md","" | replace: "_posts/",""  %}
+<img src="{{ media }}/{{ include.file }}" class="{{ include.class }}">
