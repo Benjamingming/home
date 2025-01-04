@@ -2,7 +2,7 @@
 layout: page
 title: ゆゆキチカードコレクション
 ---
-<table>
+<table class="cards">
   {% for row in site.data.yuyukichicards %}
     {% if forloop.first %}
     <tr>
@@ -14,7 +14,7 @@ title: ゆゆキチカードコレクション
 
     {% tablerow pair in row %}
       {% if pair[0] == "URL" %}
-        <a href="{{ pair[1] }}" target="_blank" rel="noopener"><span>𝕏</span></a>
+        <a href="" onclick="window.open('{{ pair[1] }}', '_blank', 'menubar=no');"><span>𝕏</span></a>
       {% else %}
         {{ pair[1] }}
       {% endif %}
