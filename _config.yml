@@ -23,6 +23,9 @@ paginate:         5
 # Custom vars
 version:          1.0.0
 
+yuyukichi-cards:
+  repo:           https://docs.google.com/spreadsheets/d/1n8SilQ_Ssk-I60uRWFZ2IUlVlczz7BuUA0lOrvl7zsM/edit?usp=sharing
+
 note:
   repo:           https://note.com/benjaming_ming
 

@@ -6,7 +6,9 @@
           {{ site.title }}
         </a>
       </h2>
-      <p class="lead">{{ site.description }}</p>
+      <p>
+        <small>{{ site.description }}</small>
+      </p>
     </div>
 
     <nav class="sidebar-nav">
@@ -28,12 +30,12 @@
       {% endfor %}
 
       <hr>
-      <a class="sidebar-nav-item" href="{{ site.twitter.repo }}">𝕏(Twitter)</a>
-      <a class="sidebar-nav-item" href="{{ site.misskey-io.repo }}">MIsskey.io</a>
-      <a class="sidebar-nav-item" href="{{ site.note.repo }}">note</a>
+      <a class="sidebar-nav-item" href="{{ site.twitter.repo }}">𝕏(Twitter)<sup><small>[↗]</small></sup></a>
+      <a class="sidebar-nav-item" href="{{ site.misskey-io.repo }}">MIsskey.io<sup><small>[↗]</small></sup></a>
+      <a class="sidebar-nav-item" href="{{ site.note.repo }}">note<sup><small>[↗]</small></sup></a>
     </nav>
 
-    
+
     <footer>
       <p>
         <small>Hosted on GitHub Pages.<br>Theme by <a href="https://github.com/mdo">mdo</a>.</small>
