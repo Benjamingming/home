@@ -32,6 +32,7 @@ title: ゆゆキチカードコレクション
       "paging": true,
       "searching": true,
       "ordering": true,
+      "order": [[ 0, "desc"], [1, "asc"]],
       "language": {
         "emptyTable": "テーブルにデータがありません",
         "info": " _TOTAL_ 件中 _START_ から _END_ まで表示",
