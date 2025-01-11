@@ -175,7 +175,7 @@ title: ゆゆキチカードコレクション
         "level": i + 1,
         "count": filterd_card_list.length,
         "unique_count": unique_card_list.length,
-        "percentage": Math.trunc((filterd_card_list.length / all_cards.length) * 100) + "%",
+        "percentage": Math.round((filterd_card_list.length / all_cards.length) * 100) + "%",
       });
     }
 
