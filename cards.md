@@ -181,5 +181,15 @@ title: ゆゆキチカードコレクション
 
     return card_info_list;
   }
-
 </script>
+
+<!-- dataTables読み込み後に反映 -->
+<style>
+  table th {
+    text-align: center !important;
+  }
+
+  table tr td.dt-type-numeric {
+    text-align: center !important;
+  }
+</style>
