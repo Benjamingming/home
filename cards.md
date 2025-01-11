@@ -3,6 +3,25 @@ layout: page
 title: ゆゆキチカードコレクション
 ---
 
+<details>
+  <summary>コレクションの獲得状況</summary>
+  獲得全枚数:{{ site.data.yuyukichicards | size }}
+  <table class="info_table" id="info_table">
+    <thead>
+      <tr>
+        <th>星</th>
+        <th>獲得枚数</th>
+        <th>カード種類数</th>
+        <th>獲得割合</th>
+      </tr>
+    </thead>
+    <tbody style="text-align: center;">
+    </tbody>
+  </table>
+</details>
+
+<br>
+
 <table class="cards" id="cards">
   {% for row in site.data.yuyukichicards %}
     {% if forloop.first %}
@@ -27,6 +46,23 @@ title: ゆゆキチカードコレクション
 
 <script type="text/javascript" >
   $(document).ready(function() {
+
+    var all_cards =  {{ site.data.yuyukichicards | jsonify }};
+    
+    var card_info_list = calculateCards(all_cards);
+
+    var info_table = $("#info_table");
+    card_info_list.forEach(function(card_info, index) {
+      var row = $("<tr></tr>");
+
+      for(var key in card_info) {
+        var cell = $("<td></td>").text(card_info[key]);
+        row.append(cell);
+      }
+
+      info_table.append(row);
+    });
+
     var tableOptions = {
       "info": true,
       "paging": true,
@@ -120,4 +156,30 @@ title: ゆゆキチカードコレクション
     }
     $('#cards').DataTable(tableOptions);
   });
+
+  function calculateCards(all_cards) {
+    var card_info_list = [];
+    for(var i = 0; i < 5; i++){
+      var filterd_card_list = all_cards.filter(
+        function(card){
+          return card.星 == i + 1
+        });
+
+      var unique_card_list = Array.from(new Map(filterd_card_list.map(
+          function(card){
+            return [card.カード名, card]
+          }
+        )).values());
+
+      card_info_list.push({
+        "level": i + 1,
+        "count": filterd_card_list.length,
+        "unique_count": unique_card_list.length,
+        "percentage": Math.trunc((filterd_card_list.length / all_cards.length) * 100) + "%",
+      });
+    }
+
+    return card_info_list;
+  }
+
 </script>

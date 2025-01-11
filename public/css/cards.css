@@ -3,3 +3,11 @@
         text-align: center;
     }
 }
+
+.info_table {
+    width: 50%;
+
+    th {
+        white-space: nowrap;
+    }
+}
