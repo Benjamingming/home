@@ -22,6 +22,9 @@ title: ゆゆキチカードコレクション
 
 <br>
 
+<input type="text" id="dateSince" class="dateRangeFilter" placeholder="📅ここから"> ～ <input type="text" id="dateUntil" class="dateRangeFilter" placeholder="📅ここまで">
+<button id="clearDateRange">クリア</button>
+
 <table class="cards" id="cards">
   {% for row in site.data.yuyukichicards %}
     {% if forloop.first %}
@@ -155,6 +158,41 @@ title: ゆゆキチカードコレクション
       },
     }
     $('#cards').DataTable(tableOptions);
+
+    const datepickerBase = {
+            changeYear: true
+          ,changeMonth: true
+          ,prevText: "前月"
+          ,nextText: "次月"
+          ,monthNames: [ "1月","2月","3月","4月","5月","6月"
+              ,"7月","8月","9月","10月","11月","12月" ]
+          ,monthNamesShort: [ "１月","２月","３月","４月","５月","６月"
+              ,"７月","８月","９月","１０月","１１月","１２月" ]
+          ,dayNames: [ "日曜日","月曜日","火曜日","水曜日","木曜日","金曜日","土曜日" ]
+          ,dayNamesShort: [ "日曜","月曜","火曜","水曜","木曜","金曜","土曜" ]
+          ,dayNamesMin: [ "日","月","火","水","木","金","土" ]
+          ,weekHeader: "周"
+          ,showWeek :false
+          ,dateFormat: "yy/mm/dd"
+          ,firstDay: 0 /* 週の開始を日曜にする */
+          ,isRTL: false
+          ,showMonthAfterYear: true
+          ,yearSuffix: "年"
+          ,showButtonPanel: true
+          ,closeText : "閉じる"
+          ,currentText:"今日"
+          ,onSelect: function(date) {
+              var since = $('#dateSince').val();
+              var until = $('#dateUntil').val();
+              var table = $('#cards').DataTable();
+
+              table.search.fixed('range', function(searchStr, data, index){
+                return isDateInRange(data[0], since, until);
+              }).draw();
+            }
+    };
+
+    $( ".dateRangeFilter" ).datepicker(datepickerBase);
   });
 
   function calculateCards(all_cards) {
@@ -181,6 +219,23 @@ title: ゆゆキチカードコレクション
 
     return card_info_list;
   }
+
+  function isDateInRange(cardDate, since, until){
+    if((since <= cardDate && until >= cardDate) || (!since && until >= cardDate) || (since <= cardDate && !until)) {
+      console.log(since);
+      return true;
+    }
+
+    return false;
+  }
+
+  $('#clearDateRange').on('click', function(){
+    console.log("click");
+    $('#dateSince').val("");
+    $('#dateUntil').val("");
+    var table = $('#cards').DataTable();
+    table.search.draw();
+  });
 </script>
 
 <!-- dataTables読み込み後に反映 -->
