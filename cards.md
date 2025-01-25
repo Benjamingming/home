@@ -234,7 +234,9 @@ title: ゆゆキチカードコレクション
     $('#dateSince').val("");
     $('#dateUntil').val("");
     var table = $('#cards').DataTable();
-    table.search.draw();
+    table.search.fixed('range', function(searchStr, data, index){
+      return true;
+    }).draw();
   });
 </script>
 
