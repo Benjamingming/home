@@ -221,16 +221,10 @@ title: ゆゆキチカードコレクション
   }
 
   function isDateInRange(cardDate, since, until){
-    if((since <= cardDate && until >= cardDate) || (!since && until >= cardDate) || (since <= cardDate && !until)) {
-      console.log(since);
-      return true;
-    }
-
-    return false;
+    return ((since <= cardDate && until >= cardDate) || (!since && until >= cardDate) || (since <= cardDate && !until));
   }
 
   $('#clearDateRange').on('click', function(){
-    console.log("click");
     $('#dateSince').val("");
     $('#dateUntil').val("");
     var table = $('#cards').DataTable();
