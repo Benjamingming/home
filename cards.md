@@ -51,8 +51,12 @@ title: ゆゆキチカードコレクション
   $(document).ready(function() {
 
     var all_cards =  {{ site.data.yuyukichicards | jsonify }};
+    var all_card_dates = all_cards.map(card => new Date(card.日付));
     
     var card_info_list = calculateCards(all_cards);
+
+    var minDate = getMinDate(all_card_dates);
+    var maxDate = getMaxDate(all_card_dates);
 
     var info_table = $("#info_table");
     card_info_list.forEach(function(card_info, index) {
@@ -181,6 +185,8 @@ title: ゆゆキチカードコレクション
           ,showButtonPanel: true
           ,closeText : "閉じる"
           ,currentText:"今日"
+          ,minDate: minDate
+          ,maxDate: maxDate
           ,onSelect: function(date) {
               var since = $('#dateSince').val();
               var until = $('#dateUntil').val();
@@ -197,7 +203,7 @@ title: ゆゆキチカードコレクション
 
   function calculateCards(all_cards) {
     var card_info_list = [];
-    for(var i = 0; i < 5; i++){
+    for(var i = 0; i < 6; i++){
       var filterd_card_list = all_cards.filter(
         function(card){
           return card.星 == i + 1
@@ -222,6 +228,24 @@ title: ゆゆキチカードコレクション
 
   function isDateInRange(cardDate, since, until){
     return ((since <= cardDate && until >= cardDate) || (!since && until >= cardDate) || (since <= cardDate && !until));
+  }
+
+  function getMinDate(dates) {
+    var minDate = new Date(2024,1,1);
+
+    if (dates) {
+      minDate = new Date(Math.min.apply(null, dates));
+    }
+    return minDate;
+  }
+
+  function getMaxDate(dates) {
+    var maxDate = new Date(2024,1,1);
+
+    if (dates) {
+      maxDate = new Date(Math.max.apply(null, dates));
+    }
+    return maxDate;
   }
 
   $('#clearDateRange').on('click', function(){
